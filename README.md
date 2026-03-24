@@ -32,23 +32,23 @@ This is a solved problem — but most tutorials never show you how.
 ┌─────────────────────────────────────────────────────────┐
 │                    BROWSER (Next.js)                    │
 │                                                         │
-│  ┌──────────────┐    ┌──────────────┐                  │
-│  │  Chat UI     │───▶│  IndexedDB   │  (always works)  │
-│  │ (Notes.js)   │    │  (lib/db.js) │                  │
-│  └──────────────┘    └──────────────┘                  │
+│  ┌──────────────┐    ┌──────────────┐                   │
+│  │  Chat UI     │───▶│  IndexedDB   │  (always works)   │
+│  │ (Notes.js)   │    │  (lib/db.js) │                   │
+│  └──────────────┘    └──────────────┘                   │
 │         │                    │                          │
 │         │            ┌───────────────┐                  │
 │         └───────────▶│  Sync Engine  │                  │
-│                       │ (lib/sync.js) │                  │
-│                       └───────┬───────┘                  │
+│                       │ (lib/sync.js) │                 │
+│                       └───────┬───────┘                 │
 └───────────────────────────────┼─────────────────────────┘
                                 │  HTTP (when online)
                                 ▼
 ┌─────────────────────────────────────────────────────────┐
 │                  Spring Boot Backend                    │
 │                                                         │
-│   POST /notes  ──▶  Upsert (latest updatedAt wins)     │
-│   GET  /notes?lastSync=ts  ──▶  Delta since timestamp  │
+│   POST /notes  ──▶  Upsert (latest updatedAt wins)      │
+│   GET  /notes?lastSync=ts  ──▶  Delta since timestamp   │
 └─────────────────────────────────────────────────────────┘
 ```
 
