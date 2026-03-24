@@ -39,8 +39,8 @@ This is a solved problem — but most tutorials never show you how.
 │         │                    │                          │
 │         │            ┌───────────────┐                  │
 │         └───────────▶│  Sync Engine  │                  │
-│                       │ (lib/sync.js) │                 │
-│                       └───────┬───────┘                 │
+│                      │ (lib/sync.js) │                  │
+│                      └───────┬───────┘                  │
 └───────────────────────────────┼─────────────────────────┘
                                 │  HTTP (when online)
                                 ▼
@@ -71,27 +71,27 @@ User types & sends
   └───────────┘
 ```
 
-| Status | Indicator | Meaning |
-|--------|-----------|---------|
-| `pending` | ⏳ | Saved locally, not sent to server |
-| `sent` | ✔ | Received by server |
-| `synced` | ✔✔ (blue) | Confirmed synced both ways |
+| Status    | Indicator  |          Meaning                  |
+|-----------|------------|-----------------------------------|
+| `pending` |    ⏳      | Saved locally, not sent to server |
+| `sent`    |    ✔       | Received by server                |
+| `synced`  | ✔✔ (blue)  | Confirmed synced both ways        |
 
 ---
 
 ## Features
 
-| Feature | Detail |
-|---------|--------|
-| 📦 **Offline Storage** | IndexedDB via `idb` — persists across refreshes |
-| 🔄 **Push Sync** | Sends all `pending` messages to server on sync |
-| 📥 **Pull Sync** | Fetches new/updated messages from server |
-| ⚖️ **Conflict Resolution** | Latest `updatedAt` timestamp always wins |
-| 🕐 **Delta Sync** | `GET /notes?lastSync=<ts>` — only fetches what changed |
-| 🌐 **Online Detection** | `navigator.onLine` + `online`/`offline` events |
-| 🔒 **Sync Guard** | Sync button disabled + 🔴 banner when offline |
-| 🔁 **Auto Retry** | Re-syncs automatically when internet returns |
-| 💬 **Chat UI** | WhatsApp-style bubbles, right-aligned, full-height |
+| Feature                    | Detail                                                |
+|----------------------------|-------------------------------------------------------|
+| 📦 **Offline Storage**     | IndexedDB via `idb` — persists across refreshes       |
+| 🔄 **Push Sync**           | Sends all `pending` messages to server on sync        |
+| 📥 **Pull Sync**           | Fetches new/updated messages from server              |
+| ⚖️ **Conflict Resolution** | Latest `updatedAt` timestamp always wins              |
+| 🕐 **Delta Sync**          | `GET /notes?lastSync=<ts>` — only fetches what changed|
+| 🌐 **Online Detection**    | `navigator.onLine` + `online`/`offline` events        |
+| 🔒 **Sync Guard**          | Sync button disabled + 🔴 banner when offline         |
+| 🔁 **Auto Retry**          | Re-syncs automatically when internet returns          |
+| 💬 **Chat UI**             | WhatsApp-style bubbles, right-aligned, full-height    |
 
 ---
 
